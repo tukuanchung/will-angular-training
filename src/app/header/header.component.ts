@@ -9,7 +9,15 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  siteName = 'Hello ~~~';
+
   ngOnInit(): void {
+    setTimeout(() => {
+      this.siteName = 'Time Up';
+    }, 2000);
   }
 
+  changeTitle(): void {
+    this.siteName = 'HELLO~~~~';
+  }
 }
