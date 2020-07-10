@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConditionalExpr } from '@angular/compiler';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +20,10 @@ export class HeaderComponent implements OnInit {
     }, 2000);
   }
 
-  changeTitle(): void {
-    this.siteName = 'HELLO~~~~';
+  changeTitle($event: MouseEvent): void {
+    console.log($event);
+    if ($event.ctrlKey){
+      this.siteName = 'HELLO~~~~';
+    }
   }
 }
