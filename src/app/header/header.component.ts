@@ -13,17 +13,21 @@ export class HeaderComponent implements OnInit {
   siteName = 'Hello ~~~';
   subtitle = '記載著 Will 在網路世界的學習心得與技術分享';
   sitelogo = '/assets/images/logo.png';
+  counter = 1;
+
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.siteName = 'Time Up';
-    }, 2000);
+    // setTimeout(() => {
+    //   this.siteName = 'Time Up';
+    // }, 2000);
   }
 
   changeTitle($event: MouseEvent): void {
-    console.log($event);
-    if ($event.ctrlKey){
-      this.siteName = 'HELLO~~~~';
-    }
+    // console.log($event);
+    this.counter++;
+    console.log(this.counter);
+    // if ($event.ctrlKey){
+    //   this.siteName = 'HELLO~~~~';
+    // }
   }
 }
