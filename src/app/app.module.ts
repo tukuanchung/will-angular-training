@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { MaskPipe } from './mask.pipe';
+import { GenderPipe } from './gender.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MaskPipe,
+    GenderPipe
   ],
   imports: [
     BrowserModule,
