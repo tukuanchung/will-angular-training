@@ -6,11 +6,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class GenderPipe implements PipeTransform {
 
   transform(value: string): string {
-    if (value === 'Y'){
-      return '男';
-    }else{
-      return '女';
+    switch (value){
+      case 'M':
+        return '男';
+      case 'F':
+        return '女';
+      default:
+        return 'N/A';
     }
+    // if (value === 'Y'){
+    //   return '男';
+    // }else{
+    //   return '女';
+    // }
   }
 
 }
