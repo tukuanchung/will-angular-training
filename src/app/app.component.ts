@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {  DataService } from './data.service';
+import { Article } from './Article';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import {  DataService } from './data.service';
 export class AppComponent {
   keyword = 'demo1';
 
-  data: any[];
+  data: Article[];
 
   constructor(private datasvc: DataService){
     this.data = datasvc.data;
@@ -18,5 +19,6 @@ export class AppComponent {
   doSearch(value: string): void{
     this.keyword = value;
   }
-
 }
+
+
