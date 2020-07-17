@@ -29,6 +29,10 @@ export class AppComponent implements OnInit, OnDestroy{
   doSearch(value: string): void{
     this.keyword = value;
   }
+
+  removeArticle(id: number): void{
+    console.log(`Removing article ${id}`);
+  }
 }
 
 

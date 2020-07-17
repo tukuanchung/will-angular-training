@@ -13,7 +13,7 @@
         <pre>{{ 'M' | gender}}</pre>
         <pre>{{ 'N' | gender}}</pre>
         <!-- Article START-->
-        <app-article [item]="item" [i]="i" *ngFor="let item of data; let i=index"></app-article>
+        <app-article [item]="item" [i]="i" *ngFor="let item of data; let i=index" (delete)="removeArticle($event)"></app-article>
         <!-- Article END-->
       </div>
     </section>
