@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {  DataService } from './data.service';
 import { Article } from './Article';
 
@@ -7,7 +7,7 @@ import { Article } from './Article';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy{
   keyword = 'demo1';
 
   data: Article[];
@@ -21,6 +21,9 @@ export class AppComponent implements OnInit{
     });
   }
 
+  ngOnDestroy(): void {
+    console.log(' app component destroyed!');
+  }
 
   // alt+ O
   doSearch(value: string): void{
