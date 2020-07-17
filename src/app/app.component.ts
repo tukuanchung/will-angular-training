@@ -7,18 +7,21 @@ import { Article } from './Article';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   keyword = 'demo1';
 
   data: Article[];
 
-  constructor(private datasvc: DataService){
-    datasvc.load()
+  constructor(private datasvc: DataService){}
+
+  ngOnInit(): void {
+    this.datasvc.load()
       .subscribe(result => {
       this.data = result;
     });
-    // this.data = datasvc.data;
   }
+
+
   // alt+ O
   doSearch(value: string): void{
     this.keyword = value;
